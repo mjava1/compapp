@@ -4,10 +4,6 @@
     .span6
       =category_image_link(:category_name => category[1], :category_id => category[0])
 
-    .span2.offset4
-      %h5.pull-right
-        latest 5 entries
-
   .gallery#tiles
     %ul
       - entries.each_with_index do |entry, i|

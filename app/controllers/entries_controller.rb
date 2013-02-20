@@ -1,3 +1,6 @@
+require 'RMagick'
+include Magick
+
 class EntriesController < ApplicationController
   before_filter :authenticate_user!, :only => [:index, :destroy, :edit, :update]
   # GET /entries
@@ -17,6 +20,15 @@ class EntriesController < ApplicationController
     @vote = Vote.new
     @show_submit = true
     @entry = Entry.find(params[:id], :include => :category)
+
+    d=@entry.image_url.to_s
+
+    img =  Magick::Image.read(@entry.image_url.to_s).first
+    thumb = img.resize(100, 100)
+
+    #image = MiniMagick::Image.open(@entry.image_url.to_s)
+    #image.resize "100x100"
+    #image.write  "output.jpg"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -46,9 +58,7 @@ class EntriesController < ApplicationController
     @entry = Entry.new(params[:entry])
     @entry.ip = request.remote_ip
 
-    image = MiniMagick::Image.open("input.jpg")
-    image.resize "100x100"
-    image.write  "output.jpg"
+
 
     respond_to do |format|
       if @entry.save
