@@ -34,3 +34,7 @@ gem 'activerecord-reputation-system', require: 'reputation_system'
 gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
 gem "delayed_job", "~> 3.0.5"
 gem 'delayed_job_active_record'
+group :development do
+  gem 'guard-livereload'
+end
+gem "mini_magick"

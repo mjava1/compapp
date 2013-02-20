@@ -46,6 +46,10 @@ class EntriesController < ApplicationController
     @entry = Entry.new(params[:entry])
     @entry.ip = request.remote_ip
 
+    image = MiniMagick::Image.open("input.jpg")
+    image.resize "100x100"
+    image.write  "output.jpg"
+
     respond_to do |format|
       if @entry.save
         format.html { redirect_to @entry, notice: 'Entry was successfully created.' }

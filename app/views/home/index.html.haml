@@ -8,18 +8,12 @@
       %h5.pull-right
         latest 5 entries
 
-  .gallery.img-polaroid
+  .gallery#tiles
     %ul
       - entries.each_with_index do |entry, i|
 
       -#Limit to the most recent 6 entries
       - break if i == 5
         %li
-          .gallery-item
-            .gallery-img
-              =link_to image_tag(entry.image_url.to_s, :class =>"img-polaroid"), entry
-            .gallery-vote
-              =link_to "VOTE", entry, method: "get", :class => "btn btn-small btn-block "
+          =link_to image_tag(entry.image_url.to_s), entry
 
-    .gallery-more
-      =link_to "more...", entries_category_path(category[0]), method: "get"
