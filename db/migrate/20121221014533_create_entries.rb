@@ -4,7 +4,6 @@ class CreateEntries < ActiveRecord::Migration
       t.string :name
       t.string :email
       t.string :caption
-      t.integer :category_id
       t.string :image
 
       t.timestamps

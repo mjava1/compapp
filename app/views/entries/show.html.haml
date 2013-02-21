@@ -1,6 +1,4 @@
 .row.category-header
-  .span6
-    =category_image_link(:category_name => @entry.category.name, :category_id => @entry.category.id)
 
 .row
   .span7
@@ -10,8 +8,6 @@
       = @entry.name
   .span4
     .img-polaroid
-      -if user_signed_in?
-        = "(" + pluralize(@entry.reputation_for(:votes).to_i, "vote") + ")"
 
       - if user_signed_in?
         %p
@@ -21,17 +17,6 @@
           %b Approved:
           = @entry.approved
 
-      %b PLEASE NOTE ONLY ONE VOTE PER EMAIL ADDRESS
-      = simple_form_for(@vote, :url => vote_entry_path(@entry)) do |f|
-        = f.error_notification
-
-        .form-inputs
-          = f.input :name, :required => true
-          = f.input :email
-          = f.button :submit, 'Vote', :class => 'fff'
-
-      %small
-        Note: By entering a vote it is deemed that you accept the competitions terms and conditions.
 
     .img-polaroid.caption
       %p

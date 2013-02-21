@@ -1,15 +1,7 @@
-
-- @entries_by_category.each do |category, entries|
-  .row.category-header
-    .span6
-      =category_image_link(:category_name => category[1], :category_id => category[0])
-
-  .gallery#tiles
-    %ul
-      - entries.each_with_index do |entry, i|
-
-      -#Limit to the most recent 6 entries
-      - break if i == 5
-        %li
-          =link_to image_tag(entry.image_url.to_s), entry
-
+.gallery.img-polaroid
+  %ul
+    - @entries.each_with_index do |entry, i|
+      %li
+        .gallery-item
+          .gallery-img
+            =link_to image_tag(entry.image_url.to_s, :class =>"img-polaroid"), entry

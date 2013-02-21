@@ -17,9 +17,9 @@ class EntriesController < ApplicationController
   # GET /entries/1
   # GET /entries/1.json
   def show
-    @vote = Vote.new
+
     @show_submit = true
-    @entry = Entry.find(params[:id], :include => :category)
+    @entry = Entry.find(params[:id])
 
     d=@entry.image_url.to_s
 
@@ -58,8 +58,6 @@ class EntriesController < ApplicationController
     @entry = Entry.new(params[:entry])
     @entry.ip = request.remote_ip
 
-
-
     respond_to do |format|
       if @entry.save
         format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
@@ -96,23 +94,6 @@ class EntriesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to entries_url }
       format.json { head :no_content }
-    end
-  end
-
-  def vote
-
-    @vote = Vote.new(params[:vote])
-    @vote.ip = request.remote_ip
-
-    @entry = Entry.find(params[:id])
-    @vote.entry_id = @entry.id
-
-    if @vote.save
-      @entry.add_evaluation(:votes, 1, @vote)
-      flash[:notice] = "Thanks for voting!"
-      redirect_to :action => :show, :id => @entry.id
-    else
-      render :action => :show
     end
   end
 end

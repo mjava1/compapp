@@ -2,11 +2,11 @@
 
 %table
   %tr
-    %th Votes
+
     %th Name
     %th Email
     %th Caption
-    %th Category
+
     %th IP
     %th
     %th
@@ -14,11 +14,10 @@
 
   - @entries.each do |entry|
     %tr
-      %td= entry.reputation_for(:votes).to_i
       %td= entry.name
       %td= entry.email
       %td= entry.caption
-      %td= entry.category_id
+
       %td= entry.ip
 
       %td= link_to 'Show', entry

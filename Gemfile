@@ -30,7 +30,6 @@ gem "binding_of_caller", ">= 0.6.8", :group => :development
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem "fog", "~> 1.3.1"
 gem "carrierwave"
-gem 'activerecord-reputation-system', require: 'reputation_system'
 gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
 gem "delayed_job", "~> 3.0.5"
 gem 'delayed_job_active_record'

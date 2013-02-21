@@ -1,13 +1,6 @@
 Compapp::Application.routes.draw do
-  resources :votes
-
-
   resources :entries do
-    member{ post :vote }
-  end
 
-  resources :categories do
-    member{ get :entries }
   end
 
 
