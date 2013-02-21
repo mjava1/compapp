@@ -1,0 +1,11 @@
+= simple_form_for(@brief) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :image
+    = f.input :video
+    = f.input :caption
+
+  .form-actions
+    = f.button :submit

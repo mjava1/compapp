@@ -1,0 +1,19 @@
+%h1 Listing campaign_types
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @campaign_types.each do |campaign_type|
+    %tr
+      %td= campaign_type.name
+      %td= link_to 'Show', campaign_type
+      %td= link_to 'Edit', edit_campaign_type_path(campaign_type)
+      %td= link_to 'Destroy', campaign_type, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Campaign type', new_campaign_type_path

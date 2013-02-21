@@ -1,0 +1,25 @@
+%h1 Listing briefs
+
+%table
+  %tr
+    %th Title
+    %th Image
+    %th Video
+    %th Caption
+    %th
+    %th
+    %th
+
+  - @briefs.each do |brief|
+    %tr
+      %td= brief.title
+      %td= brief.image
+      %td= brief.video
+      %td= brief.caption
+      %td= link_to 'Show', brief
+      %td= link_to 'Edit', edit_brief_path(brief)
+      %td= link_to 'Destroy', brief, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Brief', new_brief_path

@@ -1,4 +1,13 @@
 Compapp::Application.routes.draw do
+  resources :campaigns
+
+
+  resources :campaign_types
+
+
+  resources :briefs
+
+
   resources :entries do
 
   end

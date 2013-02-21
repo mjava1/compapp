@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @campaign_type.name
+
+= link_to 'Edit', edit_campaign_type_path(@campaign_type)
+\|
+= link_to 'Back', campaign_types_path

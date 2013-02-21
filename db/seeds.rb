@@ -23,9 +23,9 @@ user = User.find_or_create_by_email :name => adminUserName, :email => adminEmail
 puts 'user: ' << user.name
 user.add_role :admin
 
-#puts 'CATEGORIES'
-#categories = ["Free range", "Local", "Organic", "Vegetarian", "Eco-cleaners", "Recycling", "Composting", "Eco-packaging", "Sustainable Fish", "Food rescue", "BYO containers", "Fair trade"]
-#categories.each do |category|
-#  Category.find_or_create_by_name({ :name => category }, :without_protection => true)
-#  puts 'category: ' << category
-#end
+puts 'CAMPAIGN TYPES'
+campaign_types = ["Brand Awareness", "Collaborative Media"]
+campaign_types.each do |campaign|
+  CampaignType.find_or_create_by_name({ :name => campaign }, :without_protection => true)
+  puts 'campaign type: ' << campaign
+end

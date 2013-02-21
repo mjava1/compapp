@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @brief.title
+%p
+  %b Image:
+  = @brief.image
+%p
+  %b Video:
+  = @brief.video
+%p
+  %b Caption:
+  = @brief.caption
+
+= link_to 'Edit', edit_brief_path(@brief)
+\|
+= link_to 'Back', briefs_path
