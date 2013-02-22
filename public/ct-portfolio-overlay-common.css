@@ -1,0 +1,51 @@
+.view {
+   width: 320px;
+   float: left;
+   overflow: hidden;
+   position: relative;
+   text-align: center;
+   cursor: default;
+   border-radius: 3px;
+   box-shadow: 0px 0px 2px RGBA(0,0,0,0.4);
+   -webkit-box-shadow: 0px 0px 2px RGBA(0,0,0,0.4);
+   -moz-box-shadow: 0px 0px 2px RGBA(0,0,0,0.4);
+}
+	li.isotope-item.last .view { width: 315px;}
+	
+.view .mask,.view .content {
+   width: 300px;
+   height: 100%;
+   position: absolute;
+   overflow: hidden;
+   top: 0;
+   left: 0;
+}
+.view img {
+   display: block;
+   position: relative;
+}
+.view h4 {
+   text-transform: uppercase;
+   color: #fff;
+   text-align: center;
+   position: relative;
+   padding: 10px;
+   background: rgba(0, 0, 0, 0.8);
+   margin: 20px 0 0 0;
+}
+.view p {
+   font-family: Georgia, serif;
+   font-style: italic;
+   font-size: 12px;
+   position: relative;
+   color: #fff;
+   padding: 10px 20px 20px;
+   text-align: center;
+}
+.view a.info {
+   display: inline-block;
+   position: relative;
+   bottom: -10px;
+}
+.view a.info: hover {
+}
