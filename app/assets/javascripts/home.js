@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-
-           alert('ff');
 //
 //    // Prepare layout options.
 //    var options = {

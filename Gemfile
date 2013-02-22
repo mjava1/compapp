@@ -37,4 +37,4 @@ gem 'delayed_job_active_record'
 group :development do
   gem 'guard-livereload'
 end
-gem "rmagick", "~> 2.13.2"
+#gem "rmagick", "~> 2.13.2"
