@@ -15,7 +15,7 @@ Compapp::Application.routes.draw do
     root :to => 'home#index'
   end
 
-  root :to => "/landing/index.html"
+  root :to => "home#index"
   devise_for :users
   resources :users
 end
