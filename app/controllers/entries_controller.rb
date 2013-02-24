@@ -1,6 +1,3 @@
-require 'RMagick'
-include Magick
-
 class EntriesController < ApplicationController
   before_filter :authenticate_user!, :only => [:index, :destroy, :edit, :update]
   # GET /entries
